@@ -41,6 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third party applications
+    'rest_framework',
+
+    # local apps
+    'api.apps.ApiConfig',
+    'web_resources.apps.WebResourcesConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +132,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Rest framework settings
+REST_FRAMEWORK = {
+    'DEFUALT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ]
+}
