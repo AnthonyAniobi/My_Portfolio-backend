@@ -1,7 +1,6 @@
-from unicodedata import category
 from django.contrib import admin
 
-from web.models import category, work, education, experience
+from web.models import category, work, education, experience, contact_icons
 
 # Register your models here.
 admin.site.register([
@@ -9,4 +8,5 @@ admin.site.register([
     work.Work,
     education.Education,
     experience.Experience,
+    contact_icons.ContactIcons,
     ])
