@@ -7,3 +7,6 @@ class Education(models.Model):
     school = models.CharField(max_length=500, verbose_name='Name of School')
     certificate_type = models.CharField(max_length=100, verbose_name='Type of Certificate')
     description = models.TextField(null=True, verbose_name='Description on education')
+
+    def __str__(self) -> str:
+        return self.school

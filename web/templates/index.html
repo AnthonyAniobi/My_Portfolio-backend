@@ -104,7 +104,7 @@
     <div class="caption-header text-center wow zoomInDown">
       <h5 class="fw-normal">Welcome</h5>
       <h1 class="fw-light mb-4">I'm <b class="fg-theme">Anthony</b> Aniobi</h1>
-      <div class="badge">Mechatronics/Software Engineer</div>
+      <div class="badge">Software Engineer</div>
     </div> <!-- End Caption header -->
     <div class="floating-button"><span class="ti-mouse"></span></div>
   </div>
@@ -150,7 +150,7 @@
           <ul class="timeline mt-4 pr-md-5">
             {% for edu in education %}
             <li>
-              <div class="title">{{edu.year}}</div>
+              <div class="title">{{edu.start_date.year}}-{{edu.end_date.year}}</div>
               <div class="details">
                 <h5>{{edu.course}}</h5>
                 <small class="fg-theme">{{edu.school}}</small>
@@ -165,7 +165,7 @@
           <ul class="timeline mt-4 pr-md-5">
             {% for work in experience %}
             <li>
-              <div class="title">{{work.timeline}}</div>
+              <div class="title">{{work.start_date.year}}-{{work.end_date.year}}</div>
               <div class="details">
                 <h5>{{work.position}}</h5>
                 <small class="fg-theme">{{work.company}}</small>
@@ -189,13 +189,17 @@
       <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
         <button class="btn btn-theme-outline selected" data-filter="*">All</button>
         {% for cat in worksCategory %}
-        <button class="btn btn-theme-outline" data-filter=".{{cat}}">{{cat}}</button>
+        <button class="btn btn-theme-outline" data-filter=".{{cat.name}}">{{cat.name}}</button>
         {% endfor %}
       </div>
 
       <div class="gridder my-3">
         {% for work in works %}
-        <div class="grid-item {{work.category1}} {{work.category2}} wow zoomIn">
+        <div class="grid-item
+        {% for category in works.work_category.objects.all %}
+          category.name
+        {% endfor %} 
+         wow zoomIn">
           <div class="img-place" data-src="{{work.image_url}}" data-fancybox
             data-caption="<h5 class='fg-theme'>{{work.title}}</h5> <p>{{work.sub_title}}</p><a href='{{work.store_url}}' target='_blank' rel='noopener noreferrer'>Go to {{work.title}} main page</a>">
             <img src="{{work.image_url}}" alt="{{work.alt_text}}">
