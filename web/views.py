@@ -22,3 +22,9 @@ def portfolio(request):
     context = {}
 
     return render(request, 'portfolio.html', context=context)
+
+def not_found(request, exception):
+    return render(request, '404.html')
+
+def server_error(request, exception):
+    return render(request, '500.html')
