@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,25 +12,25 @@
 
   <title>Anthony Aniobi - Portfolio</title>
 
-  <link rel="shortcut icon" href="/static/assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
 
-  <link rel="stylesheet" type="text/css" href="/static/assets/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/themify-icons.css' %}">
 
-  <link rel="stylesheet" type="text/css" href="/static/assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
 
-  <link rel="stylesheet" type="text/css" href="/static/assets/vendor/animate/animate.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
 
-  <link rel="stylesheet" type="text/css" href="/static/assets/vendor/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/owl-carousel/owl.carousel.css' %}">
 
-  <link rel="stylesheet" type="text/css" href="/static/assets/vendor/perfect-scrollbar/css/perfect-scrollbar.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar/css/perfect-scrollbar.css' %}">
 
-  <link rel="stylesheet" type="text/css" href="/static/assets/vendor/nice-select/css/nice-select.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/nice-select/css/nice-select.css' %}">
 
-  <link rel="stylesheet" type="text/css" href="/static/assets/vendor/fancybox/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/fancybox/css/jquery.fancybox.min.css' %}">
 
-  <link rel="stylesheet" type="text/css" href="/static/assets/css/virtual.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/virtual.css' %}">
 
-  <link rel="stylesheet" type="text/css" href="/static/assets/css/topbar.virtual.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/topbar.virtual.css' %}">
 </head>
 
 <body class="theme-red">
@@ -220,7 +221,7 @@
     <div class="container">
       <h1 class="text-center">Find me on: </h1>
       <div class="row">
-        {% for x in icons.firstRow() %}
+        {% for x in first_row_icons %}
         <div class="col-md-6 col-lg-4 col-xl-3 item">
           <div class="img-place wow fadeInUp">
             <a href="{{x.link}}" target="_blank" rel="noopener noreferrer"><img src="{{x.image_url}}"
@@ -230,7 +231,7 @@
         {% endfor %}
       </div>
       <div class="row">
-        {% for x in icons.secondRow() %}
+        {% for x in second_row_icons %}
         {% if x.mail == True %}
         <div class="col-md-6 col-lg-4 col-xl-3 item">
           <div class="img-place wow fadeInUp">
