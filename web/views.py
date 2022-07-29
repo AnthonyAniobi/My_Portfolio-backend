@@ -1,26 +1,28 @@
 from django.shortcuts import render
-from web.models import category, work, experience, education
-from web.mock_data import icons_contact, personal_info, skills
+from web.models import (
+    category, work, experience, education, skill,
+    personal_info, contact_icons
+    )
 
 def index(request):
 
     context = {
-        "personal_info":personal_info.PersonalInfo(),
-        "codeSkills":skills.MySkills.getCoding(),
-        "designSkills":skills.MySkills.getDesign(),
+        "personal_info":personal_info.PersonalInfo.objects.first(),
+        "codeSkills":skill.Skill.objects.filter(isCoding='True'),
+        "designSkills":skill.Skill.objects.filter(isCoding='False'),
         'education': education.Education.objects.all(),
         'experience': experience.Experience.objects.all(),
         'works': work.Work.objects.all(),
         'worksCategory': category.Category.objects.all(),
-        'first_row_icons': icons_contact.firstRow,
-        'second_row_icons': icons_contact.secondRow,
+        'first_row_icons': contact_icons.ContactIcons.objects.filter(first_row='True'),
+        'second_row_icons': contact_icons.ContactIcons.objects.filter(first_row='False'),
     }
     return render(request, 'index.html', context=context)
 
 
 def portfolio(request):
+    
     context = {}
-
     return render(request, 'portfolio.html', context=context)
 
 def not_found(request, exception):

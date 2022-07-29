@@ -10,6 +10,9 @@ class Work(models.Model):
     alt_text = models.CharField(max_length=250, verbose_name='alternative image text')
     store_url = models.URLField(null=True, verbose_name='url of live view')
     
+    def work_categories(self):
+        all_categories =  self.work_category.all()
+        return ' '.join(all_categories)
 
     def __str__(self) -> str:
         return self.title

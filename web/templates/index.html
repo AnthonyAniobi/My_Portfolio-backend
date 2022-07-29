@@ -120,8 +120,8 @@
             <div class="progress-wrapper wow fadeInUp">
               <span class="caption">{{ skill.name }}</span>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: {{skill.percent}}%;" aria-valuenow="75"
-                  aria-valuemin="0" aria-valuemax="100">{{skill.percent}}%</div>
+                <div class="progress-bar" role="progressbar" style="width: {{skill.percentage}}%;" aria-valuenow="75"
+                  aria-valuemin="0" aria-valuemax="100">{{skill.percentage}}%</div>
               </div>
             </div>
             {% endfor %}
@@ -134,8 +134,8 @@
             <div class="progress-wrapper wow fadeInUp">
               <span class="caption">{{skill.name}}</span>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: {{skill.percent}}%;" aria-valuenow="75"
-                  aria-valuemin="0" aria-valuemax="100">{{skill.percent}}%</div>
+                <div class="progress-bar" role="progressbar" style="width: {{skill.percentage}}%;" aria-valuenow="75"
+                  aria-valuemin="0" aria-valuemax="100">{{skill.percentage}}%</div>
               </div>
             </div>
             {% endfor %}
@@ -195,11 +195,7 @@
 
       <div class="gridder my-3">
         {% for work in works %}
-        <div class="grid-item
-        {% for category in works.work_category.objects.all %}
-          category.name
-        {% endfor %} 
-         wow zoomIn">
+        <div class="grid-item {{work.work_category.name}} wow zoomIn">
           <div class="img-place" data-src="{{work.image_url}}" data-fancybox
             data-caption="<h5 class='fg-theme'>{{work.title}}</h5> <p>{{work.sub_title}}</p><a href='{{work.store_url}}' target='_blank' rel='noopener noreferrer'>Go to {{work.title}} main page</a>">
             <img src="{{work.image_url}}" alt="{{work.alt_text}}">
@@ -213,7 +209,7 @@
       </div> <!-- End gridder -->
       {% if getmore %}
       <div class="text-center wow fadeInUp">
-        <a href="/portfolio" class="btn btn-theme">Load More</a>
+        <a href="{% url 'portfolio' %}" class="btn btn-theme">Load More</a>
       </div>
       {% endif %}
     </div>
