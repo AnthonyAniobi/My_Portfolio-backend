@@ -14,5 +14,8 @@ class PersonalInfo(models.Model):
     playstore_link = models.URLField(null=True, verbose_name='playstore profile link')
     fiverr_link = models.URLField(null=True, verbose_name='fiverr profile link')
     upwork_link = models.URLField(null=True, verbose_name='upwork profile link')
-    gmail_link = models.URLField(null=True, verbose_name='gmail profile link')
+    gmail_link = models .EmailField(null=True, verbose_name='gmail profile link')
     copyright = models.DateField(auto_now=True)
+
+    def __str__(self) -> str:
+        return 'MyProfile at age: '+str(self.age)
