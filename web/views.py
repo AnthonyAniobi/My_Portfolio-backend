@@ -26,7 +26,10 @@ def portfolio(request):
     return render(request, 'portfolio.html', context=context)
 
 def not_found(request, exception):
-    return render(request, '404.html')
+    context = {
+        "personal_info":personal_info.PersonalInfo.objects.first(),
+    }
+    return render(request, '404.html', context=context)
 
 def server_error(request):
     return render(request, '500.html')

@@ -1,0 +1,17 @@
+name: 'build pipeline for portfolio python'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    setps: 
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "anthonyaniobi1998something"
+          heroku_email: "anthonyaniobi198@gmail.com"
