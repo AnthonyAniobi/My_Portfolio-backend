@@ -6,7 +6,7 @@ from web.models import (
     )
 
 def index(request):
-    return render(request, 'test.html', {})
+    return render(request, 'index.html', {})
 
 def indexs(request):
 
