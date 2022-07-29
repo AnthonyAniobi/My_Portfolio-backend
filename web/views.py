@@ -1,3 +1,4 @@
+from urllib import response
 from django.shortcuts import render
 from web.models import (
     category, work, experience, education, skill,
@@ -5,6 +6,9 @@ from web.models import (
     )
 
 def index(request):
+    return render(request, 'test.html', {})
+
+def indexs(request):
 
     context = {
         "personal_info":personal_info.PersonalInfo.objects.first(),
