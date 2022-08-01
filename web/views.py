@@ -1,5 +1,7 @@
 from urllib import response
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import Context, loader
 # from web.models import (
 #     category, work, experience, education, skill,
 #     personal_info, contact_icons
@@ -9,6 +11,9 @@ from web.mock_data import (
     skills
 )
 
+# def index(request):
+#     template = loader.get_template("index.html")
+#     return HttpResponse(template.render)
 
 def index(request):
 

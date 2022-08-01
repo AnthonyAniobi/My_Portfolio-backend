@@ -42,7 +42,6 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
 
     # third party applications
     'rest_framework',
+    
 
     # local apps
     'api.apps.ApiConfig',
@@ -149,7 +149,7 @@ STATIC_ROOT = BASE_DIR / "static"
 #     os.path.join(BASE_DIR, 'static'),
 # ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -160,6 +160,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Rest framework settings
 REST_FRAMEWORK = {
     'DEFUALT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'rest_framework.permissions.AllowAny',
     ]
 }
+
+# WHITENOISE_AUTOREFRESH = True
