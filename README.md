@@ -5,8 +5,17 @@
 ![Stars](https://img.shields.io/github/stars/AnthonyAniobi/My_Portfolio-backend)
 ![License](https://img.shields.io/github/license/AnthonyAniobi/My_Portfolio-backend)
 
-This is the backend python script for my portfolio website. You can find the site [Here](https://www.anthonyaniobi.netlify.app).
 
-This script serves two purposes, The first is as a backend restful api to my second React portfolio website on netlify and the other is as a fullfledge frontend 
+## Preview
+![Preview of portfolio](screenshots/portfolio_preview.gif)
 
-Also find the Repository [Here](https://github.com/AnthonyAniobi/My_Portfolio-web)
+
+## Details
+This is a python django website for my portfolio. It also serves restful api for my [React Portfolio](https://www.anthonyaniobi.netlify.app).
+
+Checkout the live application [here](https://www.anthonyaniobi.herokuapp.com)
+
+#### Checkout
+- [Portfolio in Django](https://www.anthonyaniobi.herokuapp.com)
+- [Javascript Portfolio](https://www.anthonyaniobi.netlify.app)
+- [Javascript Portfolio github source code](https://www.github.com/AnthonyAniobi/My_Portfolio-web)
