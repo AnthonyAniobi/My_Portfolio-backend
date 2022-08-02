@@ -1,8 +1,11 @@
 from rest_framework import viewsets
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
 from api.serializers import (
-    category_serializer, contact_icon_serializer,
-    education_serializer, experience_serializer, personal_info_serializer,
-    skill_serializer, work_serializer,
+    CategorySerializer, ContactIconsSerializer,EducationSerializer,
+    ExperienceSerializer, PersonalInfoSerializer,
+    SkillSerializer, WorkSerializer,
 )
 
 from web.models import(
@@ -10,30 +13,34 @@ from web.models import(
     skill, work,
 )
 
+# class IndexView(APIView):
+#     def get(self, request):
+#         return Response({'hello': 'index page'})
+
 class CategoriesView(viewsets.ModelViewSet):
     queryset= category.Category.objects.all()
-    serializer_class = category_serializer.CategorySerializer
+    serializer_class = CategorySerializer
 
 class ContactIconsView(viewsets.ModelViewSet):
     queryset= contact_icons.ContactIcons.objects.all()
-    serializer_class = contact_icon_serializer.ContactIconsSerializer
+    serializer_class = ContactIconsSerializer
 
 class EducationView(viewsets.ModelViewSet):
     queryset= education.Education.objects.all()
-    serializer_class = education_serializer.EducationSerializer
+    serializer_class = EducationSerializer
 
 class ExperienceView(viewsets.ModelViewSet):
     queryset= experience.Experience.objects.all()
-    serializer_class = experience_serializer.ExperienceSerializer
+    serializer_class = ExperienceSerializer
 
 class PersonalInfoView(viewsets.ModelViewSet):
     queryset= personal_info.PersonalInfo.objects.all()
-    serializer_class = personal_info_serializer.PersonalInfoSerializer
+    serializer_class = PersonalInfoSerializer
 
 class SkillView(viewsets.ModelViewSet):
     queryset= skill.Skill.objects.all()
-    serializer_class = skill_serializer.SkillSerializer
+    serializer_class = SkillSerializer
 
 class WorkView(viewsets.ModelViewSet):
     queryset= work.Work.objects.all()
-    serializer_class = work_serializer.WorkSerializer
+    serializer_class = WorkSerializer
