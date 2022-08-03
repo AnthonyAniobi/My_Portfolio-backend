@@ -13,9 +13,9 @@ from web.models import(
     skill, work,
 )
 
-# class IndexView(APIView):
-#     def get(self, request):
-#         return Response({'hello': 'index page'})
+class IndexView(APIView):
+    def get(self, request):
+        return Response({'hello': 'index page'})
 
 class CategoriesView(viewsets.ModelViewSet):
     queryset= category.Category.objects.all()

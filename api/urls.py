@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
 from api.views import (
-    CategoriesView, ContactIconsView, EducationView, ExperienceView,
+    IndexView, CategoriesView, ContactIconsView, EducationView, ExperienceView,
     WorkView,
 )
 
@@ -13,4 +13,6 @@ router.register('education', EducationView, basename='education')
 router.register('experience', ExperienceView, basename='experience')
 router.register('work', WorkView, 'work')
 
-urlpatterns = router.urls
+urlpatterns = [
+    path('', IndexView.as_view())
+]
