@@ -15,7 +15,17 @@ from web.models import(
 
 class IndexView(APIView):
     def get(self, request):
-        return Response({'hello': 'index page'})
+        return Response({
+            'Title': 'list of api calls',
+            '--': '-----------------',
+            'education': 'api endpoint for education list',
+            'categories': 'api endpoint for work categories',
+            'experience': 'api endpoint for exprience category',
+            'personal_info': 'api endpoint for my personal information',
+            'skill': 'api endpoint for my list of skills',
+            'work': 'api endpoint for my works',
+            'contactIcons': 'api endpoint for my contact icons',
+        })
 
 class CategoriesView(viewsets.ModelViewSet):
     queryset= category.Category.objects.all()
