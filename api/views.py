@@ -24,7 +24,7 @@ class IndexView(APIView):
             'personal_info': 'api endpoint for my personal information',
             'skill': 'api endpoint for my list of skills',
             'work': 'api endpoint for my works',
-            'contactIcons': 'api endpoint for my contact icons',
+            'contact_icons': 'api endpoint for my contact icons',
         })
 
 class CategoriesView(viewsets.ModelViewSet):

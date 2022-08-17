@@ -7,7 +7,7 @@ from api.views import (
 
 router = SimpleRouter()
 router.register('categories', CategoriesView, basename='category')
-router.register('contactIcons', ContactIconsView, basename='contact icon')
+router.register('contact_icons', ContactIconsView, basename='contact icon')
 router.register('education', EducationView, basename='education')
 router.register('experience', ExperienceView, basename='experience')
 router.register('personal_info', PersonalInfoView)
