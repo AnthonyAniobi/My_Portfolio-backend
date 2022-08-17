@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -28,29 +28,36 @@ class IndexView(APIView):
         })
 
 class CategoriesView(viewsets.ModelViewSet):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset= category.Category.objects.all()
     serializer_class = CategorySerializer
 
 class ContactIconsView(viewsets.ModelViewSet):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset= contact_icons.ContactIcons.objects.all()
     serializer_class = ContactIconsSerializer
 
 class EducationView(viewsets.ModelViewSet):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset= education.Education.objects.all()
     serializer_class = EducationSerializer
 
 class ExperienceView(viewsets.ModelViewSet):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset= experience.Experience.objects.all()
     serializer_class = ExperienceSerializer
 
 class PersonalInfoView(viewsets.ModelViewSet):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset= personal_info.PersonalInfo.objects.all()
     serializer_class = PersonalInfoSerializer
 
 class SkillView(viewsets.ModelViewSet):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset= skill.Skill.objects.all()
     serializer_class = SkillSerializer
 
 class WorkView(viewsets.ModelViewSet):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset= work.Work.objects.all()
     serializer_class = WorkSerializer
